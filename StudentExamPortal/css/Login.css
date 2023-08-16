@@ -1,0 +1,71 @@
+.container {
+  background-image: url("../images/m1.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.form-label {
+  font-size: 16px;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
