@@ -1,0 +1,187 @@
+Threading
+
+Thread=>
+	It is a smallest excutable unit for which CPU allocate some memory as well as time.
+	it is mainly using for parallel processing.
+
+
+Types of Thread
+	1)Single Thread
+		Working on only one thread at a time is called as single thread.
+
+	2)Multiple Thread
+		Working on more than one thread at a time is called as multithread.
+
+-------------------------------------------------------------------------------------------------------------
+To work with Threads C# has provided "Thread" class which comes from "System.Threading" namespace.
+
+--------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+namespace ConsoleApp157
+{
+    internal class Program
+    {
+        public static void Thread1()
+        {
+            Console.WriteLine("Calling My First Thread");
+        }
+
+        public static void Thread2()
+        {
+            Console.WriteLine("Calling My Second Thread");
+        }
+        public static void Thread3()
+        {
+            Console.WriteLine("Calling My Third Thread");
+        }
+        public static void Thread4()
+        {
+            Console.WriteLine("Calling My Fourth Thread");
+        }
+        public static void Thread5()
+        {
+            Console.WriteLine("Calling My Fifth Thread");
+        }
+        public static void Thread6()
+        {
+            Console.WriteLine("Calling My Sixth Thread");
+        }
+
+        static void Main(string[] args)
+        {
+            Thread t1 = new Thread(Thread1);//thread has been created
+            Thread t2=new Thread(Thread2);
+            Thread t3=new Thread(Thread3);
+            Thread t4=new Thread(Thread4);
+            Thread t5=new Thread(Thread5);
+            Thread t6=new Thread (Thread6);
+
+            t1.Start();//thread has been start
+            t2.Start();
+            t3.Start();
+            t4.Start();
+            t5.Start();
+            t6.Start();
+
+            Console.ReadLine();
+        }
+    }
+}
+--------------------------------------------------------------------------------------------------------------
+Thread Lifecycle
+
+Thread lifecycle has categories into four different stages.
+
+1)Unstarted Stage
+	=>Thread has been created but not yet Started.
+	=>When we pass function as a parameter into thread class constructor then that function becomes a thread and enters into unstarted stage.
+
+2)Runnable Stage/Started Stage
+	=>When we call Start() method of a thread class,it enters into Runnable Stage.
+
+3)Not Runnable
+	=>Thread is already started but now it is waiting for another thread or it is in the sleep mode.This stage is called as not runnable stage.
+	=>We can send thread into sleep mode by calling Sleep() mothod of thread class.
+
+4)Dead Stage=>
+	=>When Thread execution completed succesfully then it enters into Dead Stage.
+	=>Sometime we can send Thread into Dead Stage forcefully by calling Abort() method of Thread Class.
+-------------------------------------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Threading;
+namespace ConsoleApp158
+{
+    class Resource
+    {
+        public void Data(string s)
+        {
+            for(int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine(s);
+                Thread.Sleep(1000);
+                
+            }
+        }
+    }
+
+    internal class Program
+    {
+        public static Resource r = new Resource();
+        public static void Thread1()
+        {
+            r.Data("Thread1");
+        }
+
+        public static void Thread2()
+        {
+            r.Data("Thread2");
+        }
+        public static void Thread3()
+        {
+            r.Data("Thread3");
+        }
+        public static void Thread4()
+        {
+            r.Data("Thread4");
+        }
+        public static void Thread5()
+        {
+            r.Data("Thread5");
+
+        }
+
+
+        static void Main(string[] args)
+        {
+
+            Thread t1 = new Thread(Thread1);
+            Thread t2 = new Thread(Thread2);
+            Thread t3 = new Thread(Thread3);
+            Thread t4 = new Thread(Thread4);
+            Thread t5 = new Thread(Thread5);
+
+            t1.Start();
+            t2.Start();
+            t3.Start();
+            t4.Start();
+            t5.Start();
+            t1.Abort();
+            Console.ReadLine();
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+Asp.Net MVC
+
+.NET
+Console App
+Desktop App
+Web App
+Mobile App
+
+
+Web App = Asp.NET Web Application
+
+
+Asp=> Active Server Pages
+
+Asp.Net Web Forms=> two tire architecture
+
+Asp.net MVC Web Application => Three Tier Architecture
+
+BA Layers
+Presentation Layer(PL)
+Data Access Layer(DAL)
+Business Layer(BL)
+
+
+
+IIS=> Internate Information Services
+
+
+
+
+
+https://localhost:44349/Employee/First
+Server/Controller/Action
+
+
+
+
+Create.cshtml
+
+.cs
+.html
+
+.cshtml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
